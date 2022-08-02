@@ -4,6 +4,7 @@ def Overheads_functions(forex):
     - This function will return the value in SGD after it is converted using the real-time exchange rate from the API call.
     """
     from pathlib import Path
+    #imports regular expression and CSV.
     import re, csv
 
     #to instantiate a file path to the current working directory.
@@ -15,17 +16,25 @@ def Overheads_functions(forex):
     highestvalue = 0.00
     #to state that the category name is a string
     Category = ""
+    #create "read" object to read through file_lu
     with file_lu.open(mode = "r", encoding = "UTF-8") as file:
+        #instantiate a reader object.
         reader = csv.reader(file)
         #to skip the header.
         next(reader)
         for data in reader:
+            #if overheads value is the highest and more than 0.00
             if float(data[1]) > highestvalue:
+                #to assign the overheads value to the variable of 'highestvalue'
                 highestvalue = float(data[1])
+                #to assign the category data to the variable of 'Category' and convert them to uppercase
                 Category = data[0].upper()
-                
+                #create "writer" object and include newline to prevent any data from being added to the end of the CSV file.
                 with fl_summary.open(mode = "w", encoding = "UTF-8", newline = "") as file:
+                    #to assign the final output that will be displayed in the summary_report to the variable of 'Output' on a new line
                     Output = f"\n[HIGHEST OVERHEAD] {Category} : SGD{highestvalue:.2f}"
+                    #to write the output to summary_report
                     file.write(Output)
+                    #to close the file
                     file.close()
     file.close()

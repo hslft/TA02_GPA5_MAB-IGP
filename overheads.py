@@ -6,13 +6,13 @@ def overheads_functions(forex):
     from pathlib import Path
     import re, csv
 
-    file_home = Path.cwd()/"project_group"
-    file_path = file_home/"csv_reports"/"Overheads.csv"
+    file_jia = Path.cwd()/"project_group"
+    file_lu = file_jia/"csv_reports"/"Overheads.csv"
     
-    fp_summary = file_home/"summary_report.txt"
+    fp_summary = file_jia/"summary_report.txt"
     highestvalue = 0.00
     Category = ""
-    with file_path.open(mode = "r", encoding = "UTF-8") as file:
+    with file_lu.open(mode = "r", encoding = "UTF-8") as file:
         reader = csv.reader(file)
         #to skip the header.
         next(reader)

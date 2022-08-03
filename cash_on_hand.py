@@ -18,7 +18,7 @@ def coh_function(forex):
     #create 2 variables to be referred to at any point of the function.
     increase = 0
     deficit = 0
-    #to create an empty list to store appended values.
+    #to create an empty list to store appended values
     coh = []
 
     #create "read" object to read through files in file_lu.

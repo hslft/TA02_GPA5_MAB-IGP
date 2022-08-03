@@ -20,6 +20,7 @@ def overheads_function(forex):
         reader = csv.reader(file)
         #to skip the header.
         next(reader)
+        #to create a variable of "highestvalue"
         highestvalue = 0
         for data in reader:
             #to ensure that the data is a float and assign it to the variable of "DATA".
@@ -32,7 +33,7 @@ def overheads_function(forex):
                 highestvalue = DATA
                 #to assign the category data to the variable of 'Category' and convert them to uppercase.
                 Category = data[0].upper()
-                #create "writer" object and include newline to prevent any data from being added to the end of the CSV file.
+                #create "append" object and include newline to append data to the end of a line
                 with fl_summary.open(mode = "a", encoding = "UTF-8", newline = "") as file:
                     #to assign the final output that will be displayed in the summary_report to the variable of 'Output' on a new line.
                     Output = (f"\n[HIGHEST OVERHEAD] {Category} : SGD{highestvalue * forex:.2f}")

@@ -6,7 +6,8 @@ import csv
 file_path = Path.cwd()/"summary_report.txt"
 #to create the new file.
 file_path.touch()
-print(file_path)
+
+#to check if the file exists (for self-check)
 print(file_path.exists())
 
 import api, cash_on_hand, overheads, profit_loss

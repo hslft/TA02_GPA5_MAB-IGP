@@ -10,9 +10,10 @@ def coh_function(forex):
     import csv
 
     #to instantiate a file path to the current working directory and extend it to the respective CSV file.
-    file_lu = Path.cwd/"csv_reports"/"Cash on Hand.csv"
+    file_jia = Path.cwd()
+    file_lu = file_jia/"csv_reports"/"Cash on Hand.csv"
     #to extend the file path to the final text file, where all the computed amounts will be contained in.
-    summary = Path.cwd/"summary_report.txt"
+    summary = file_jia/"summary_report.txt"
 
     #create 2 variables to be referred to at any point of the function.
     increase = 0

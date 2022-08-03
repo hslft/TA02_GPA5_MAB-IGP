@@ -24,12 +24,11 @@ def profit_loss_function(forex):
             figure = PL[increase + 1][4]
             PREV_FIGURE = float(prev_figure)
             FIGURE = float(figure)
-            with summary.open(mode="a",encoding="UTF-8",newline="") as file:
-                if PREV_FIGURE - FIGURE <  0:
-                    with summary.open(mode="a",encoding = "UTF-8",newline="") as file:
-                        statement = (f"\n[PROFIT DEFICIT] DAY: {PL[increase + 1][0]}, AMOUNT: SGD{(lack * forex):.2f}")
-                        file.write(statement)
-                        file.close()
+            if PREV_FIGURE - FIGURE <  0:
+                with summary.open(mode="a",encoding = "UTF-8",newline="") as file:
+                    statement = (f"\n[PROFIT DEFICIT] DAY: {PL[increase + 1][0]}, AMOUNT: SGD{(lack * forex):.2f}")
+                    file.write(statement)
+                    file.close()
                 increase += 1
         if lack == 0:
             with summary.open(mode="a",encoding = "UTF-8",newline="") as file:

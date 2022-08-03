@@ -10,9 +10,11 @@ file_path.touch()
 #to check if the file exists (for self-check)
 print(file_path.exists())
 
+#to import all the other python files as modules
 import api, cash_on_hand, overheads, profit_loss
 def main():
   """
+  - 
   """
   forex = api.api_function()
   overheads.overheads_function(forex)

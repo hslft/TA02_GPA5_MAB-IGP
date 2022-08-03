@@ -1,5 +1,8 @@
 def api_function():
     """
+    - This function has no given parameter.
+    - This function will convert the computed amounts from the other tasks from USD to SGD.
+    - This function uses real-time exchange rates from the API call by accessing the nested dictionary from url.
     """
     from pathlib import Path
     import requests
@@ -10,11 +13,11 @@ def api_function():
     response = requests.get(url)
     data = response.json()
 
-    exchange_rate = data['Realtime Currency Exchange Rate']['5. Exchange Rate']
-    EXCHANGE_RATE = float(exchange_rate)
+    currency_exchange_rate = data['Realtime Currency Exchange Rate']['5. Exchange Rate']
+    CURRENCY_EXCHANGE_RATE = float(currency_exchange_rate)
 
     with summary.open(mode = "w", encoding = "UTF-8", newline = "") as file:
-        Output = (f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{EXCHANGE_RATE}")
+        Output = (f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{CURRENCY_EXCHANGE_RATE}")
         file.write(Output)
         file.close()
-    return EXCHANGE_RATE
+    return CURRENCY_EXCHANGE_RATE

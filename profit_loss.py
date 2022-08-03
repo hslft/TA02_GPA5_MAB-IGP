@@ -44,7 +44,7 @@ def profit_loss_function(forex):
                 statement1 = (f"\n[PROFIT DEFICIT] DAY: {DAY[data + 1]}, AMOUNT: SGD{lack:.2f}")
                 #to write the output to summary_report.
                 file.write(statement1)
-                #to close the file (summary_report).
+                #to close the file (summary).
                 file.close()
         #to add 1 to the index value and iterate until final value.
         length += 1
@@ -56,7 +56,7 @@ def profit_loss_function(forex):
             statement2 = (f"\n[PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")      
             #to write the output to summary_output.
             file.write(statement2) 
-            #to close the file (summary_report).
+            #to close the file (summary).
             file.close()
         #to close the file (file_lu).
         file.close()

@@ -21,7 +21,7 @@ def coh_function(forex):
     coh = []
 
     #create "read" object to read through files in file_lu.
-    with file_lu.open(mode = "r", encoding = "UTF-8") as file:
+    with file_lu.open(mode = "r", encoding = "UTF-8", error = 'ignore') as file:
         #to instantiate a reader object.
         reader = csv.reader(file)
         #to skip the header.
@@ -48,7 +48,7 @@ def coh_function(forex):
                 #deficit will be calculated by taking previous day value minus current day value.
                 deficit = PREVIOUS - CURRENT
                 #create "append" object to append data to the end of a line.
-                with summary.open(mode = "a", encoding = "UTF-8", newline = "") as file:
+                with summary.open(mode = "a", encoding = "UTF-8", error = 'ignore') as file:
                     #to assign the final output that will be displayed in the summary_report to the variable of 'Output' on a new line.
                     Output = (f"\n[CASH DEFICIT] DAY: {coh[increase + 1][0]}, AMOUNT: SGD {(deficit * forex):.2f}")
                     #to write the output to summary_output.
@@ -60,7 +60,7 @@ def coh_function(forex):
         #if there is no deficit.
         if deficit == 0:
             #create "append" object to append data to the end of a line.
-            with summary.open(mode = "a", encoding = "UTF-8", newline = "") as file:
+            with summary.open(mode = "a", encoding = "UTF-8", error = 'ignore') as file:
                 #to assign the final output that will be displayed in the summary_report to the variable of 'Output' on a new line.
                 Output = (f"\n[CASH SURPLUS] cash on each day is higher than the previous day")
                 #to write the output to summary_output and convert them to uppercase.

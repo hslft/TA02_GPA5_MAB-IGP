@@ -55,7 +55,7 @@ def coh_function(forex):
                     Output = (f"\n[CASH DEFICIT] DAY: {coh[increase + 1][0]}, AMOUNT: SGD {(deficit * forex):.2f}")
                     #to write the output to summary_output and convert them to uppercase.
                     file.write(Output)
-                    #to close the file (summary_report).
+                    #to close the file (summary).
                     file.close()
             #to add 1 to the index value and iterate until final value.
             increase += 1
@@ -67,7 +67,7 @@ def coh_function(forex):
                 Output = (f"\n[CASH SURPLUS] cash on each day is higher than the previous day")
                 #to write the output to summary_output and convert them to uppercase
                 file.write(Output.upper())
-                #to close the file (summary_report).
+                #to close the file (summary).
                 file.close()
         #to close the file (file_lu).
         file.close()

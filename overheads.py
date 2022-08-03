@@ -36,7 +36,7 @@ def overheads_function(forex):
                 #create "append" object and include newline to append data to the end of a line
                 with fl_summary.open(mode = "a", encoding = "UTF-8", newline = "") as file:
                     #to assign the final output that will be displayed in the summary_report to the variable of 'Output' on a new line.
-                    Output = (f"\n[HIGHEST OVERHEAD] {Category} : SGD{highestvalue * forex:.2f}")
+                    Output = (f"\n[HIGHEST OVERHEAD] {Category}: SGD{highestvalue * forex:.2f}")
                     #to write the output to summary_report.
                     file.write(Output)
                     #to close the file (summary_report).

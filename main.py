@@ -1,5 +1,7 @@
 from pathlib import Path
+#to import CSV.
 import csv
+
 
 file_path = Path.cwd()/"summary_report.txt"
 file_path.touch()

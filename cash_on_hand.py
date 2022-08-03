@@ -15,7 +15,8 @@ def coh_function(forex):
     #to extend the file path to the final text file, where all the computed amounts will be contained in.
     summary = file_jia/"project_group"/"summary_report.txt"
 
-    increment = 0
+    #create 2 variables to be referred to at any point of the function.
+    increase = 0
     deficit = 0
     #to create an empty list to store appended values.
     coh = []
@@ -29,25 +30,32 @@ def coh_function(forex):
         for data in reader:
             coh.append(data)
             length = len(coh)
-        while increment + 1 < length:
-            previous = float((coh[increment][1]))
-            current = float(coh[increment + 1][1])
-            scenario = previous > current
+        while increase + 1 < length:
+            #to assign the previous day value to the variable of "previous".
+            previous = coh[increase][1]
+            #to assign the current day value to the variable of "current".
+            current = coh[increase + 1][1]
+            #to ensure that the previous day value is a float and assign that to the vraiable of "PREVIOUS".
+            PREVIOUS = float(previous)
+            #to ensure that the current day value is a float and assign that to the variable of "CURRENT".
+            CURRENT = float(current)
+            #to make the scenerio of previous day value being more then current day value.
+            scenario = PREVIOUS > CURRENT
 
-            #if the scenario is met
+            #if the scenario is met.
             if scenario:
-                #deficit will be calculated by taking previous day value minus current day value
-                deficit = previous - current
+                #deficit will be calculated by taking previous day value minus current day value.
+                deficit = PREVIOUS - CURRENT
                 #create "append" object to append data to the end of a line.
                 with summary.open(mode = "a", encoding = "UTF-8", newline = "") as file:
                     #to assign the final output that will be displayed in the summary_report to the variable of 'Output' on a new line.
-                    Output = (f"\n[CASH DEFICIT] DAY: {coh[increment + 1][0]}, AMOUNT: SGD {(deficit * forex):.2f}")
+                    Output = (f"\n[CASH DEFICIT] DAY: {coh[increase + 1][0]}, AMOUNT: SGD {(deficit * forex):.2f}")
                     #to write the output to summary_output and convert them to uppercase.
                     file.write(Output)
                     #to close the file
                     file.close()
             #
-            increment += 1
+            increase += 1
         #if there is no deficit
         if deficit == 0:
             #create "append" object to append data to the end of a line.

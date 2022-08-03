@@ -1,3 +1,5 @@
+import api
+forex = api.api_function()
 def coh_function(forex):
     """
     - This function will compute the difference in cash on hand between each day.
@@ -10,10 +12,10 @@ def coh_function(forex):
     import re, csv
 
     #to instantiate a file path to the current working directory.
-    file_jia = Path.cwd()/"project_group"
+    file_jia = Path.cwd()
     file_lu = file_jia/"csv_reports"/"Cash on Hand.csv"
     #to extend the file path to the final text file, where all the computed amounts will be contained in.
-    summary = file_jia/"project_group"/"summary_report.txt"
+    summary = file_jia/"summary_report.txt"
 
     #create 2 variables to be referred to at any point of the function.
     increase = 0
@@ -70,3 +72,4 @@ def coh_function(forex):
                 file.close()
         #to close the file (file_lu).
         file.close()
+print(coh_function(forex))

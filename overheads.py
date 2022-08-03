@@ -1,3 +1,5 @@
+import api
+forex = api.api_function()
 def overheads_function(forex):
     """
     - This function will find the highest overhead category and its value.
@@ -8,7 +10,7 @@ def overheads_function(forex):
     import re, csv
 
     #to instantiate a file path to the current working directory.
-    file_jia = Path.cwd()/"project_group"
+    file_jia = Path.cwd()
     file_lu = file_jia/"csv_reports"/"Overheads.csv"
     #to extend the file path to the final text file, where all the computed amounts will be contained in.
     fl_summary = file_jia/"summary_report.txt"
@@ -34,7 +36,7 @@ def overheads_function(forex):
                 #to assign the category data to the variable of 'Category' and convert them to uppercase.
                 Category = data[0].upper()
                 #create "writer" object and include newline to prevent any data from being added to the end of the CSV file.
-                with fl_summary.open(mode = "w", encoding = "UTF-8", newline = "") as file:
+                with fl_summary.open(mode = "a", encoding = "UTF-8", newline = "") as file:
                     #to assign the final output that will be displayed in the summary_report to the variable of 'Output' on a new line.
                     Output = (f"\n[HIGHEST OVERHEAD] {Category} : SGD{highestvalue:.2f}")
                     #to write the output to summary_report.
@@ -43,3 +45,4 @@ def overheads_function(forex):
                     file.close()
     #to close the file (file_lu).
     file.close()
+print(overheads_function(forex))

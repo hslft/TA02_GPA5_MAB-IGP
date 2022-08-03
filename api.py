@@ -7,7 +7,7 @@ def api_function():
     from pathlib import Path
     import requests
 
-    summary = Path.cwd()/"project_group"/"summary_report.txt"
+    summary = Path.cwd()/"summary_report.txt"
 
     url = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey="YTO6ABLT1Z3PLSFS"'
     response = requests.get(url)
@@ -21,3 +21,4 @@ def api_function():
         file.write(Output)
         file.close()
     return CURRENCY_EXCHANGE_RATE
+print(api_function())

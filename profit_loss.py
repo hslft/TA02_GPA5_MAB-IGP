@@ -3,6 +3,8 @@
 # file_jia = Path.cwd()/"project_group"
 # file_lu = file_jia/"csv_reports"/"Profits and Loss.csv"
 # summary = file_jia/"summary_report.txt"
+import api
+forex = api.api_function()
 def profit_loss_function(forex): 
     from pathlib import Path
     import re, csv
@@ -38,3 +40,4 @@ def profit_loss_function(forex):
                 file.write(statement_2)
                 file.close()
     file.close()
+print(profit_loss_function(forex))

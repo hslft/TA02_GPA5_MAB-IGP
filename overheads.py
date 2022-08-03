@@ -14,15 +14,16 @@ def overheads_function(forex):
     #to extend the file path to the final text file, where all the computed amounts will be contained in.
     fl_summary = file_jia/"summary_report.txt"
     #to state that highest overhead value is a float.
-    highestvalue = 0.00
+    # highestvalue = 0.00
     #to state that the category name is a string.
-    Category = ""
+    # Category = ""
     #create "read" object to read through file_lu.
     with file_lu.open(mode = "r", encoding = "UTF-8") as file:
         #instantiate a reader object.
         reader = csv.reader(file)
         #to skip the header.
         next(reader)
+        highestvalue = 0
         for data in reader:
             #to ensure that the data is a float and assign it to the variable of "DATA".
             DATA = float(data[1])

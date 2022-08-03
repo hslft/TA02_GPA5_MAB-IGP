@@ -22,3 +22,4 @@ def api_function():
         file.close()
     return CURRENCY_EXCHANGE_RATE
 
+"TESTING"

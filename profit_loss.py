@@ -24,7 +24,9 @@ def profit_loss_function(forex):
             figure = PL[increase + 1][4]
             PREV_FIGURE = float(prev_figure)
             FIGURE = float(figure)
-            if PREV_FIGURE - FIGURE <  0:
+            scenario = PREV_FIGURE > FIGURE
+            if scenario:
+                lack = PREV_FIGURE - FIGURE
                 with summary.open(mode="a",encoding = "UTF-8",newline="") as file:
                     statement = (f"\n[PROFIT DEFICIT] DAY: {PL[increase + 1][0]}, AMOUNT: SGD{(lack * forex):.2f}")
                     file.write(statement)

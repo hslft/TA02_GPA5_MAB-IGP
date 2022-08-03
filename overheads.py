@@ -1,4 +1,3 @@
-"testing123"
 def overheads_function(forex):
     """
     - This function will find the highest overhead category and its value.
@@ -37,7 +36,7 @@ def overheads_function(forex):
                 #create "writer" object and include newline to prevent any data from being added to the end of the CSV file.
                 with fl_summary.open(mode = "w", encoding = "UTF-8", newline = "") as file:
                     #to assign the final output that will be displayed in the summary_report to the variable of 'Output' on a new line.
-                    Output = f"\n[HIGHEST OVERHEAD] {Category} : SGD{highestvalue:.2f}"
+                    Output = (f"\n[HIGHEST OVERHEAD] {Category} : SGD{highestvalue:.2f}")
                     #to write the output to summary_report.
                     file.write(Output)
                     #to close the file (summary_report).

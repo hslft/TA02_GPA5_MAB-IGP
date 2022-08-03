@@ -14,12 +14,12 @@ print(file_path.exists())
 import api, cash_on_hand, overheads, profit_loss
 def main():
   """
-  - 
+  - This function would import all the other python files as modules.
+  - This function acts as the coordinating program to execute each python file (the functions).
   """
   forex = api.api_function()
   overheads.overheads_function(forex)
   cash_on_hand.coh_function(forex)
   profit_loss.profit_loss_function(forex)
-  
   
 main()

@@ -22,9 +22,10 @@ def profit_loss_function(forex):
             with summary.open(mode="a",encoding = "UTF-8",newline="") as file:
                 statement1 = (f"\n[PROFIT DEFICIT] DAY: {DAY[data + 1]}, AMOUNT: SGD{lack:.2f}")
                 file.write(statement1)
+                file.close()
             length += 0
     if length == 0:
         with summary.open(mode="a",encoding = "UTF-8",newline="") as file:
             statement2 = (f"\n[PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")       
             file.write(statement2) 
-        
+            file.close()

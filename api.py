@@ -20,7 +20,7 @@ def api_function():
     #to convert it to a float and assign it to a variable of "CURRENCY_EXCHANGE_RATE".
     CURRENCY_EXCHANGE_RATE = float(currency_exchange_rate)
 
-    #create "writer" object and include newline to prevent and extra line from being added to the end of the CSV file.
+    #create "writer" object and include newline to prevent an extra line from being added to the end of the CSV file.
     with summary.open(mode = "w", encoding = "UTF-8", newline = "") as file:
         #to assign the final output that will be displayed in the summary_report to the variable of 'Output' on a new line.
         Output = (f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{CURRENCY_EXCHANGE_RATE}")

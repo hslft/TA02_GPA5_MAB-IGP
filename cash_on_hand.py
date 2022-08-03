@@ -1,4 +1,3 @@
-
 def coh_function(forex):
     """
     - This function will compute the difference in cash on hand between each day.
@@ -10,11 +9,10 @@ def coh_function(forex):
     #to import CSV.
     import csv
 
-    #to instantiate a file path to the current working directory.
-    file_jia = Path.cwd()
-    file_lu = file_jia/"csv_reports"/"Cash on Hand.csv"
+    #to instantiate a file path to the current working directory and extend it to the respective CSV file.
+    file_lu = Path.cwd/"csv_reports"/"Cash on Hand.csv"
     #to extend the file path to the final text file, where all the computed amounts will be contained in.
-    summary = file_jia/"summary_report.txt"
+    summary = Path.cwd/"summary_report.txt"
 
     #create 2 variables to be referred to at any point of the function.
     increase = 0
@@ -38,11 +36,11 @@ def coh_function(forex):
             previous = coh[increase][1]
             #to assign the current day value to the variable of "current".
             current = coh[increase + 1][1]
-            #to ensure that the previous day value is a float and assign that to the vraiable of "PREVIOUS".
+            #to convert the previous day value to a float and assign that to the vraiable of "PREVIOUS".
             PREVIOUS = float(previous)
-            #to ensure that the current day value is a float and assign that to the variable of "CURRENT".
+            #to convert the current day value to a float and assign that to the variable of "CURRENT".
             CURRENT = float(current)
-            #to make the scenerio of previous day value being more then current day value.
+            #to make the scenerio : previous day value being more then current day value.
             scenario = PREVIOUS > CURRENT
 
             #if the scenario is met.
@@ -53,19 +51,19 @@ def coh_function(forex):
                 with summary.open(mode = "a", encoding = "UTF-8", newline = "") as file:
                     #to assign the final output that will be displayed in the summary_report to the variable of 'Output' on a new line.
                     Output = (f"\n[CASH DEFICIT] DAY: {coh[increase + 1][0]}, AMOUNT: SGD {(deficit * forex):.2f}")
-                    #to write the output to summary_output and convert them to uppercase.
+                    #to write the output to summary_output.
                     file.write(Output)
                     #to close the file (summary).
                     file.close()
             #to add 1 to the index value and iterate until final value.
             increase += 1
-        #if there is no deficit
+        #if there is no deficit.
         if deficit == 0:
             #create "append" object to append data to the end of a line.
             with summary.open(mode = "a", encoding = "UTF-8", newline = "") as file:
                 #to assign the final output that will be displayed in the summary_report to the variable of 'Output' on a new line.
                 Output = (f"\n[CASH SURPLUS] cash on each day is higher than the previous day")
-                #to write the output to summary_output and convert them to uppercase
+                #to write the output to summary_output and convert them to uppercase.
                 file.write(Output.upper())
                 #to close the file (summary).
                 file.close()

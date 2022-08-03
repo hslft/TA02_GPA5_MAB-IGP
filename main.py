@@ -7,10 +7,10 @@ file_path = Path.cwd()/"summary_report.txt"
 #to create the new file.
 file_path.touch()
 
-#to check if the file exists (for self-check)
+#to check if the file exists (for self-check).
 print(file_path.exists())
 
-#to import all the other python files as modules
+#to import all the other python files as modules.
 import api, cash_on_hand, overheads, profit_loss
 def main():
   """

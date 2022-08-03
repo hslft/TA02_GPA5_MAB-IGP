@@ -1,6 +1,6 @@
 def profit_loss_function(forex): 
     """
-    - This function will compute the difference in the net profit between each day.
+    - This function will compute the differences in the net profit between each day.
     - This function will return PROFIT DEFICIT if the net profit value is lower than the previous day.
     - This function will also return the DAY and AMOUNT in SGD if it returns PROFIT DEFICIT.
     - Otherwise, this function will return NET PROFIT SURPLUS, where the net profit on each day is higher than the previous day.
@@ -26,11 +26,11 @@ def profit_loss_function(forex):
         for profits in reader:
             #to assign the day value to the variable of "day" and ensure that it is a float.
             day = float(profits[0])
-            #to assign the profits and loss value to the variable of "pl" and ensure that it is a float.
+            #to assign the profit and loss value to the variable of "pl" and ensure that it is a float.
             pl = float(profits[4]) * forex
             DAY.append(day)
             PL.append(pl)
-    #to create a variable of "length"
+    #to create a variable of "length".
     length = 0
     #iterates over a mutable sequence to access each item in the sequence by index.
     for data in range(len(PL) - 1):

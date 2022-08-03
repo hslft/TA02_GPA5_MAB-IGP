@@ -13,7 +13,7 @@ def coh_function(forex):
     file_jia = Path.cwd()/"project_group"
     file_lu = file_jia/"csv_reports"/"Cash on Hand.csv"
     #to extend the file path to the final text file, where all the computed amounts will be contained in.
-    fl_summary = file_jia/"project_group"/"summary_report.txt"
+    summary = file_jia/"project_group"/"summary_report.txt"
 
     increment = 0
     deficit = 0
@@ -39,7 +39,7 @@ def coh_function(forex):
                 #deficit will be calculated by taking previous day value minus current day value
                 deficit = previous - current
                 #create "append" object to append data to the end of a line.
-                with fl_summary.open(mode = "a", encoding = "UTF-8", newline = "") as file:
+                with summary.open(mode = "a", encoding = "UTF-8", newline = "") as file:
                     #to assign the final output that will be displayed in the summary_report to the variable of 'Output' on a new line.
                     Output = (f"\n[CASH DEFICIT] DAY: {coh[increment + 1][0]}, AMOUNT: SGD {(deficit * forex):.2f}")
                     #to write the output to summary_output and convert them to uppercase.
@@ -51,7 +51,7 @@ def coh_function(forex):
         #if there is no deficit
         if deficit == 0:
             #create "append" object to append data to the end of a line.
-            with fl_summary.open(mode = "a", encoding = "UTF-8", newline = "") as file:
+            with summary.open(mode = "a", encoding = "UTF-8", newline = "") as file:
                 #to assign the final output that will be displayed in the summary_report to the variable of 'Output' on a new line.
                 Output = (f"\n[CASH SURPLUS] cash on each day is higher than the previous day")
                 #to write the output to summary_output and convert them to uppercase

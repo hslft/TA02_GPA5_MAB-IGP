@@ -5,8 +5,8 @@ def overheads_function(forex):
     - This function will return the value in SGD after it is converted using the real-time exchange rate from the API call.
     """
     from pathlib import Path
-    #imports regular expression and CSV.
-    import re, csv
+    #to import CSV.
+    import csv
 
     #to instantiate a file path to the current working directory.
     file_jia = Path.cwd()

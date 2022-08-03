@@ -7,8 +7,8 @@ def coh_function(forex):
     - Otherwise, this function will return CASH SURPLUS, where the cash on each day is higher than the previous day.
     """
     from pathlib import Path
-    #imports regular expression and CSV.
-    import re, csv
+    #to import CSV.
+    import csv
 
     #to instantiate a file path to the current working directory.
     file_jia = Path.cwd()

@@ -3,7 +3,7 @@
 # file_jia = Path.cwd()/"project_group"
 # file_lu = file_jia/"csv_reports"/"Profits and Loss.csv"
 # summary = file_jia/"summary_report.txt"
-def profit_loss_function(): 
+def profit_loss_function(forex): 
     from pathlib import Path
     import re, csv
     
@@ -27,16 +27,13 @@ def profit_loss_function():
             with summary.open(mode="a",encoding="UTF-8",newline="") as file:
                 if PREV_FIGURE - FIGURE <  0:
                     with summary.open(mode="a",encoding = "UTF-8",newline="") as file:
-                        statement = f"\n[PROFIT DEFICIT] DAY: {PL[increase + 1][0]}, AMOUNT: SGD{(lack):.2f}"
+                        statement = (f"\n[PROFIT DEFICIT] DAY: {PL[increase + 1][0]}, AMOUNT: SGD{(lack * forex):.2f}")
                         file.write(statement)
                         file.close()
-                        increase += 1
+                increase += 1
         if lack == 0:
             with summary.open(mode="a",encoding = "UTF-8",newline="") as file:
-                statement_2 = f"\n[PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+                statement_2 = (f"\n[PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
                 file.write(statement_2)
                 file.close()
     file.close()
-print(profit_loss_function())
-            
-

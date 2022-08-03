@@ -23,4 +23,3 @@ def main():
   profit_loss.profit_loss_function(forex)
   
 main()
-test

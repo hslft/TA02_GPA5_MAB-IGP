@@ -2,8 +2,9 @@ from pathlib import Path
 #to import CSV.
 import csv
 
-
+#to extend the file path to the final text file, where all the computed amounts will be contained in.
 file_path = Path.cwd()/"summary_report.txt"
+#to create the new file.
 file_path.touch()
 print(file_path)
 print(file_path.exists())

@@ -1,5 +1,4 @@
-import api
-forex = api.api_function()
+
 def overheads_function(forex):
     """
     - This function will find the highest overhead category and its value.
@@ -45,4 +44,3 @@ def overheads_function(forex):
                     file.close()
     #to close the file (file_lu).
     file.close()
-print(overheads_function(forex))

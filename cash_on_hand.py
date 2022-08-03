@@ -1,5 +1,4 @@
-import api
-forex = api.api_function()
+
 def coh_function(forex):
     """
     - This function will compute the difference in cash on hand between each day.
@@ -72,4 +71,3 @@ def coh_function(forex):
                 file.close()
         #to close the file (file_lu).
         file.close()
-print(coh_function(forex))

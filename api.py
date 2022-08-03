@@ -21,4 +21,4 @@ def api_function():
         file.write(Output)
         file.close()
     return CURRENCY_EXCHANGE_RATE
-print(api_function())
+

@@ -1,9 +1,3 @@
-# from pathlib import Path
-# import re, csv
-# file_jia = Path.cwd()/"project_group"
-# file_lu = file_jia/"csv_reports"/"Profits and Loss.csv"
-# summary = file_jia/"summary_report.txt"
-
 def profit_loss_function(forex): 
     from pathlib import Path
     import re, csv
